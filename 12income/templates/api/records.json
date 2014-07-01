@@ -1,0 +1,9 @@
+{%extends "api/base.json" %}
+
+{%block body %}
+    {% load humanize %}
+    [
+    {%for record in records %}
+    {%endfor%}
+    ]
+{%endblock%}

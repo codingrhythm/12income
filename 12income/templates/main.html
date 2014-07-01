@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>12Income - A new way to do your personal accounting.</title>
+    <link rel="icon" href="/statics/icon.ico" type="image/x-icon" />
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_URL}}css/idx.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    {%block head_inc%}{%endblock%}
+</head>
+
+<body>
+<header id="overview" class="overview">
+    <div class="inner">
+        <div class="container">
+            <div class="intro">
+                <h1><a href="/">
+                    <img width="278" height="75" alt="12income" src="/statics/img/logo.png">
+                    </a>
+                </h1>
+                <h2>A new way to do your personal accounting.</h2>
+                <p class="desc">12Income makes it very easy to manage your daily expenses, <br/>and most importantly, it's fun and it's free!</p>
+                <hr>
+                <p style="text-align: center"><a class="btn btn-info btn-large" href="/signup">Sign Up Now &amp; Start Saving Money</a></p>
+            </div>
+            <div class="overview-screenshot"></div>
+        </div>
+    </div>
+</header>
+<div class="login-box">
+    <div class="container">
+        
+        <form class="form-search" method="post" action="/login/">
+            {% csrf_token %}
+            <input type="text" name="email" placeholder="Email" class="span2">
+            <input type="password" name="password" placeholder="Password" class="span2">
+            <button class="btn btn-sign-in" type="submit">SIGN IN</button>
+            {%if error == 'login'%}
+            <span class="alert alert-error" style="padding: 4px 10px 7px;">
+            Oops! It seems like the email or the password you provided is not correct.
+            </span>
+            {%endif%}
+        </form>
+    </div>
+</div>
+<div class="features">
+    <div class="container">
+        <h1 id="features"><a href="#features">Why 12Income is good for everyone?</a></h1>
+        <hr class="soften">
+        <div class="row">
+            <div class="span4">
+                <img src="/statics/img/glyphicons_042_group.png" class="bs-icon">
+                <h2>Easy for Everyone</h2>
+                <p>12Income is designed to be light weighted and easy to use. Everything is on the same page. There are no complex configurations, you can simply start doing accounting by typing a number.</p>
+            </div>
+            <div class="span4">
+                <img src="/statics/img/glyphicons_241_flash.png" class="bs-icon">
+                <h2>Instant Change</h2>
+                <p>Any record item can be switched to income or expense with just one click. With the help of action integrated calendar, you can drag and drop items between day slots. Managing account is so easy! You will love this!</p>
+            </div>
+            <div class="span4">
+                <img src="/statics/img/glyphicons_270_shield.png" class="bs-icon">
+                <h2>Budget Control</h2>
+                <p>It's always good to plan your finance. In 12Income uou can setup your monthly budget and 12Income will monitor your expenses at real time against given budget. It will warn you in case you are overspending.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <img src="/statics/img/glyphicons_082_roundabout.png" class="bs-icon">
+                <h2>Recurring</h2>
+                <p>Every record item can be set as a recurring item. 12Income will save you some time by adding this item automatically each month. Of course, you can always stop this recurring at any time.</p>
+            </div>
+            <div class="span4">
+                <img src="/statics/img/glyphicons_023_cogwheels.png" class="bs-icon">
+                <h2>Customization</h2>
+                <p>Once you sign up for 12Income, it's ready to use. You don't have to setup anything. However you can still do some basic settings to work better with 12Income, e.g. change the currency symbol.</p>
+            </div>
+            <div class="span4">
+                <img src="/statics/img/glyphicons_040_stats.png" class="bs-icon">
+                <h2>Comprehensive Reports</h2>
+                <p>Straight forward reporting page will help you understand your financial status in real time. It shows you how much money you spend every month and what kinds of staffs you are spending your money on.</p>
+            </div>
+        </div>
+        <h1 >and we are improving... <a href="/signup">Sign Up and Check Out!</a></h1>
+        <hr class="soften">
+        <footer class="footer">
+            <p>UI Built on <a target="_blank" href="http://twitter.github.com/bootstrap/index.html">Bootstrap 2</a>. Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+            <p>I am a web developer specialized in PHP, Django and XHTML+CSS+JS. <a href="mailto:space.fd@gmail.com">Contact me</a> if you have any suggestion.</p>
+        </footer>
+    </div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29398709-1']);
+  _gaq.push(['_setDomainName', '12income.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

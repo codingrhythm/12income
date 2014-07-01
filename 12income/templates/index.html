@@ -1,0 +1,65 @@
+{%extends "base.html" %}
+{%block js%}
+    <script>
+        var currency_symbol = '{{user.get_profile.currency_symbol}}';
+        var budget_enabled = {%if user.get_profile.budget_enabled%}true{%else%}false{%endif%};
+    </script>
+    <script language="javascript" src="{{STATIC_URL}}js/site.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/jquery.qtip.min.js"></script>
+{%endblock%}
+
+{%block body%}
+    {% load humanize %}
+    <div id="balance">
+        <span>Account balance </span>{{user.get_profile.currency_symbol}}{{user.get_profile.account_balance|intcomma}}
+    </div>
+    <div class="main-box">
+        <div id="month-ctrl" class="date-ctrl">
+            <a id="arrow-left" class="arrow" href="#">&lt;</a>
+            <div class="mask"><div class="strip"></div></div>
+            <a id="arrow-right" class="arrow" href="#">&gt;</a>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="wrap">
+            <div id="balance-meter">
+                <div id="expense-meter" class="meter">
+                    <div class="label">-</div>
+                    <div class="progress progress-danger"><div class="bar" style="width:100%"></div></div>
+                    <div class="clear"></div>
+                </div>
+                <div id="income-meter" class="meter">
+                    <div class="label">+</div>
+                    <div class="progress progress-success"><div class="bar" style="width:100%"></div></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            {%if user.get_profile.budget_enabled%}
+            <div id="budget-info" class="alert alert-info">Loading...</div>
+            <div id="budget-progress" class="progress progress-danger progress-striped">
+                <div class="bar" style="width: 20%;"></div>
+            </div>
+            {%endif%}
+            
+            <hr class="soften">
+            <div id="input-form">
+                <div class="input-wrap">
+                    <input id="input-item" type="text" placeholder="Enter a bill" class="span2">
+                    <button id="btn-add" class="btn btn-info">
+                        <i class="icon-plus icon-white"></i>
+                        Add
+                    </button>
+                    <span class="help-inline">
+                        Use plus(+) sign before the number when add as income item. You DO NOT need to add the currency symbol for each item. <br />
+                        Try to enter something like this, <strong>Lunch: 5.46 or wage: +2000 or simply just a number like 9.99</strong>.
+                    </span>
+                </div>
+            </div>
+            
+            <div id="records">
+            </div>
+        </div>
+    </div>
+{%endblock%}

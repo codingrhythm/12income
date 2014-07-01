@@ -1,0 +1,63 @@
+body{padding-top: 90px;background: url("../img/grid-18px-masked.png") repeat-x 0 40px;}
+*{border-radius: 0 0 0 0 !important;}
+.clear{clear:both;}
+.navbar .brand{padding:8px 20px 0;}
+hr.soften {background-image: -moz-linear-gradient(left center , transparent, rgba(0, 0, 0, 0.1), transparent);border: 0 none;height: 1px;margin: 30px 0;}
+.input-form-fixed{border-color: #D5D5D5;border-radius: 0 0 0 0;background:#fff;border-width: 0 0 1px;box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 8px rgba(0, 0, 0, 0.25);left: 0;position: fixed;right: 0;top: 40px;z-index: 1030;padding:5px 0 0;}
+#balance{text-align:center;font-weight:bold;color:#555;font-size:30px;margin-bottom:30px;font-style:italic}
+#balance span{font-size:16px;font-weight:normal;color:#999;text-transform:capitalize;padding-right:10px;font-style:normal}
+.date-ctrl{background:#efefef;border-bottom:1px solid #ddd;}
+.date-ctrl .mask{width:880px;float:left;overflow:hidden;position:relative;height:48px;}
+.date-ctrl .mask .next-strip,
+.date-ctrl .mask .strip{position:absolute;width:880px;padding-top:20px;}
+.date-ctrl .month{padding:2px 8px;cursor:pointer;font-size:12px;color:#666;margin:0 8px;position:relative;text-shadow: 1px 1px white;}
+.date-ctrl .active{color:#0088CC;font-size:16px;font-weight:bold;}
+.date-ctrl .disable{color:#bbb;cursor:default;}
+.date-ctrl .year{position:absolute;top:-15px;font-size:10px;color:#fff;padding:2px 5px;font-weight:normal;left:5px;background: #0088CC;text-shadow: none;line-height: 10px;}
+.date-ctrl .arrow{color:#999;font-weight:bold;font-size:24px;text-shadow: 1px 1px #fff;cursor:pointer;float:left;width:50px;text-align:center;background:#ddd;display:block;padding:15px 0;outline:none;}
+.date-ctrl .arrow:hover{background:#e5e5e5;text-decoration:none;}
+
+.main-box{background:#fff;margin:0 auto 40px;border:1px solid #ddd;width:980px;}
+.main-box .wrap{width:880px;margin:0 auto;}
+
+#budget-info{margin:0 0 10px;}
+#budget-progress{margin:0 0 30px;display:none;}
+
+#input-form .input-wrap{width:880px;margin:0 auto;}
+
+#btn-add{margin-bottom:9px;}
+.help-inline{color:#555;font-size:11px;}
+.help-inline strong{color:#333;}
+
+.main-box #records{cursor:default;margin:10px 0 50px;}
+.main-box #records .day{background:#eee;margin-bottom:10px;border:1px dotted #ccc;}
+.main-box #records .day-active{background:#cfe3f5;}
+.main-box #records .day .day-name{background:#ddd;color:#aaa;text-shadow: 1px 1px #fff;font-size:20px;font-weight:bold;padding:10px;float:left;text-align:center;width:40px;cursor:pointer;}
+.main-box #records .day-active .day-name{color:#fff;background:#006DCC;text-shadow:none;}
+.main-box #records .day .record-items{float:left;padding:5px 0 0 5px;width:800px;min-height:30px;}
+.main-box #records .day .record-items .record-item{float:left;margin:0 5px 5px 0;}
+.main-box #records .day .record-items .record-item .category{text-transform:capitalize;}
+.dropdown-toggle{height:18px;}
+
+.charts{width:880px;margin:20px auto;}
+
+.form-horizontal{margin:0;}
+.form-actions{margin-bottom:0}
+legend{text-indent:20px;margin-bottom:10px;}
+
+.hide{display:none;}
+.form-msg{padding:0 20px;}
+
+.overall-reports{text-align: center;padding: 20px 0 0 0;color:#aaa;}
+.overall-reports span{font-style: italic;font-size: 20px;color:#888;padding: 0 10px;}
+
+#balance-meter{margin-top:20px;}
+#balance-meter .meter{float: left;width: 440px;}
+#balance-meter .meter .label{float: left;width: 120px;background: #fff;color: #C43C35;text-align: center;padding: 0;font-size: 14px;font-weight: 300;}
+#balance-meter .meter .progress{float:left;width: 320px;}
+#balance-meter #expense-meter .progress .bar{float: right;}
+#balance-meter #income-meter .label{float: right;background: #fff;color: #57A957;}
+#balance-meter #income-meter .progress{float: right;}
+
+#loader{background:#fff;width: 100px;height: 60px;padding-top:40px;margin: 10px auto;display: none; text-align: center;border: 1px solid #ccc;position: fixed;margin:-50px 0 0 -50px; top: 50%;left: 50%}
+footer{margin-bottom: 20px;}

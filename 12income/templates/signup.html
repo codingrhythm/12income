@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" href="/statics/icon.ico" type="image/x-icon" />
+    <title>12Income - A new way to do your personal accounting.</title>
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_URL}}css/signup.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    {%block head_inc%}{%endblock%}
+</head>
+
+<body>
+    <div class="wrap">
+        <a href='/'><img width="278" height="75" alt="12income" src="/statics/img/logo-dark.png"></a>
+        <div class="signup-box">
+            <form class="form-vertical" action="/signup_action/" method="post" >{% csrf_token %}
+            <fieldset>
+                <legend>Create New Account</legend>
+                <div class="form-msg">
+                    {% if error %}
+                    <div id="setting-error" class="alert alert-error">
+                        {% if error == 'noemail'%}Please type in your email.{%endif%}
+                        {% if error == 'emailerror'%}Please enter a valid email address.{%endif%}
+                        {% if error == 'nopwd'%}Please type in your password.{%endif%}
+                        {% if error == 'nopwd2'%}Please type in your confirm password.{%endif%}
+                        {% if error == 'pwdnotmatch'%}The passwords you entered does not match.{%endif%}
+                        {% if error == 'registered'%}This email address has already been taken. Please choose another one.{%endif%}
+                    </div>
+                    {%endif%}
+                </div>
+                <div class="control-group">
+                    <label for="email" class="control-label">Email</label>
+                    <div class="controls">
+                        <input type="text" name="email" id="email" class="input-xlarge focused">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                        <input type="password" value="" name="password" id="password" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password2">Type Again</label>
+                    <div class="controls">
+                        <input type="password" value="" name="password2" id="password2" class="input-xlarge">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <input class="btn" type="submit" value="Sign Me Up" /><br />or <a href="/">Sign In</a> with existing account
+                </div>
+            </fieldset>
+          </form>
+        
+        </div>
+        <footer class="footer">
+            <p>UI Built on <a target="_blank" href="http://twitter.github.com/bootstrap/index.html">Bootstrap 2</a>.</p>
+            <p>I am a web developer specialized in PHP, Django and XHTML+CSS+JS. <a href="mailto:space.fd@gmail.com">Contact me</a> if you have any suggestion.</p>
+        </footer>
+    </div>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29398709-1']);
+  _gaq.push(['_setDomainName', '12income.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

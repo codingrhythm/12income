@@ -1,0 +1,4 @@
+{
+    "success":{{success}},
+    "data":{%block data %}{%endblock%}
+}

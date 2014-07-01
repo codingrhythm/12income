@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{%block js%}
+    <script>
+        var currency_symbol = '{{user.get_profile.currency_symbol}}';
+        var budget_enabled = {%if user.get_profile.budget_enabled%}true{%else%}false{%endif%};
+    </script>
+    <script language="javascript" src="{{STATIC_URL}}js/site.js"></script>
+{%endblock%}
+
+{%block body%}
+{% load humanize %}
+<div id="balance">
+    <span>Account balance </span>{{user.get_profile.currency_symbol}}{{user.get_profile.account_balance|intcomma}}
+</div>
+<div class="main-box">
+    <form class="form-horizontal" onsubmit="return false;">
+        <fieldset>
+            <legend>Account Settings</legend>
+            <div class="form-msg">
+                <div id="setting-error" class="alert alert-error hide"></div>
+                <div id="setting-msg" class="alert alert-info hide"></div>
+            </div>
+            <div class="control-group">
+                <label for="email" class="control-label">Email</label>
+                <div class="controls">
+                    <input type="text" value="{{user.username}}" id="email" class="input-xlarge focused">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="new-password">New Password</label>
+                <div class="controls">
+                    <input type="text" value="" id="new-password" class="input-xlarge">
+                </div>
+            </div>
+           <div class="control-group">
+                <label class="control-label" for="currency-symbol">Currency Symbol</label>
+                <div class="controls">
+                    <input type="text" value="{{user.get_profile.currency_symbol}}" id="currency-symbol" class="input-xlarge">
+                </div>
+            </div>
+           <div class="control-group">
+                <label class="control-label" for="currency-symbol">Monthly Budget</label>
+                <div class="controls">
+                    <input type="text" value="{{user.get_profile.monthly_budget}}" id="monthly_budget" class="input-xlarge">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="budget-enabled" class="control-label">&nbsp;</label>
+                <div class="controls">
+                    <label class="checkbox">
+                      <input type="checkbox" value="1" id="budget-enabled" {%if user.get_profile.budget_enabled%}checked="true"{%endif%}>
+                      Enable budget
+                    </label>
+                </div>
+           </div>
+           <div class="control-group">
+                <label class="control-label" for="currency-symbol">Account Balance</label>
+                <div class="controls">
+                    <input type="text" value="{{user.get_profile.account_balance}}" id="account_balance" class="input-xlarge">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" onclick="update_settings()">Save changes</button>
+            </div>
+        </fieldset>
+      </form>
+</div>
+{%endblock%}

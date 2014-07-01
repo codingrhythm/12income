@@ -1,0 +1,40 @@
+body{}
+a:hover{text-decoration: none;}
+.clear{clear:both;}
+.overview{color: #fff;background-color: #333;background-image: -moz-linear-gradient(#111, #333);background-repeat: no-repeat;}
+.overview .inner{background: url("../img/grid-18px.png") repeat scroll center top transparent;padding: 60px 0 0;}
+.overview .inner h1,
+.overview .inner h2{color: #fff}
+.overview .inner h2{font-weight: normal;line-height: 28px;margin: 10px 0;font-size: 24px;}
+.overview .inner .desc{font-size: 18px;line-height: 24px;font-weight: 200;}
+.overview .overview-screenshot{width: 659px;background: url('../img/overview-bg.png') no-repeat;height:380px; float: right}
+.overview .intro{width: 500px;float: left;margin-top: 40px;}
+hr{border-top: 1px solid #000;border-bottom: 1px solid #686868;margin: 30px 0;}
+hr.soften {background-image: -moz-linear-gradient(left center , transparent, rgba(0, 0, 0, 0.1), transparent);border: 0 none;height: 1px;}
+.btn-large{font-size: 26px;padding: 10px 30px;border-radius: 0 0 0 0;}
+
+.login-box {
+    border-radius: 0 0 0 0;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #F5F5F5 0%, #EEEEEE 100%);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #d5d5d5;
+    height: 30px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.bs-icon {
+    float: left;
+    margin: 7px 10px 0 0;
+    opacity: 0.8;
+}
+
+input,
+.btn-sign-in{border-radius: 0 0 0 0;}
+.features h1{text-align: center;padding: 40px 0;font-weight: 300;font-size: 40px;color: #555;}
+.features h2{font-size: 22px;font-weight: 300;}
+.footer{padding: 36px 0;}
+.row{padding: 36px 0 0;}
+footer{margin-bottom: 20px;}

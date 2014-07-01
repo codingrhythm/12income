@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{%block js%}
+    <script>
+        var currency_symbol = '{{user.get_profile.currency_symbol}}';
+    </script>
+    <script language="javascript" src="{{STATIC_URL}}js/site.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/highcharts.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/reports.js"></script>
+{%endblock%}
+
+{%block body%}
+{% load humanize %}
+<div id="balance">
+    <span>Account balance </span>{{user.get_profile.currency_symbol}}{{user.get_profile.account_balance|intcomma}}
+</div>
+<div class="main-box">
+    <div id="year-ctrl" class="date-ctrl">
+        <a id="arrow-left" class="arrow" href="#">&lt;</a>
+        <div class="mask"><div class="strip"></div></div>
+        <a id="arrow-right" class="arrow" href="#">&gt;</a>
+        <div class="clear"></div>
+    </div>
+    <div class="overall-reports">
+        Incomes:<span id="total-incomes">$100.00</span>&nbsp;&nbsp;
+        Expenses:<span id="total-expenses">$99.99</span>
+    </div>
+    <hr class="soften">
+    <div id="monthly-chart" class="charts"></div>
+    <div id="expense-chart" class="charts"></div>
+</div>
+{%endblock%}

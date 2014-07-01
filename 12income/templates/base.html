@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" href="/statics/icon.ico" type="image/x-icon" />
+    <title>12Income - A new way to do your personal accounting.</title>
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_URL}}css/site.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{STATIC_URL}}css/jquery-ui/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    {%block head_inc%}{%endblock%}
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/"><img width="89" height="24" alt="12income" src="/statics/img/logo-small.png"></a>
+            
+            {%if user.is_authenticated%}
+            <div class="nav-collapse">
+                
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li {%if pn == 'home'%}class="active"{%endif%} >
+                        <a href="/">Account Book</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li {%if pn == 'reports'%}class="active"{%endif%} >
+                        <a href="/reports">Reports</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li {%if pn == 'settings'%}class="active"{%endif%} >
+                        <a href="/settings">
+                            Settings
+                        </a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="">
+                        <a href="/logout">
+                            Logout
+                        </a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div>
+            {%endif%}
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        {%block body%}{%endblock%}
+        <div id="loader"><img src="/statics/img/loader.gif" width="20" height="20" /></div>
+        <footer class="footer">
+            <p>UI Built on <a target="_blank" href="http://twitter.github.com/bootstrap/index.html">Bootstrap 2</a>. Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+            <p>I am a web developer specialized in PHP, Django and XHTML+CSS+JS. <a href="mailto:space.fd@gmail.com">Contact me</a> if you have any suggestion.</p>
+        </footer>
+
+    </div>
+    
+    <script language="javascript" src="{{STATIC_URL}}js/jquery.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/jquery-ui.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/jquery.qtip.min.js"></script>
+    <script language="javascript" src="{{STATIC_URL}}js/bootstrap.js"></script>
+    {%block js%}{%endblock%}
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29398709-1']);
+  _gaq.push(['_setDomainName', '12income.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
